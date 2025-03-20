@@ -1,0 +1,7 @@
+.poklist{
+    display: flex;
+    flex-direction: row;
+    flex-basis: 30%;
+    width: 450px;
+    height: 500px
+}
