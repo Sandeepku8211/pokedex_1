@@ -1,0 +1,13 @@
+.pok-heading{
+    letter-spacing: 2px;
+    font-weight: bold;
+    font-size: 40px;
+    display: flex;
+    background-color: black;
+    color: white;
+    border: 2px solid white;
+    justify-content: center;
+    align-items: center;
+    margin: 2px;
+}
+

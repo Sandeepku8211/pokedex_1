@@ -1,0 +1,21 @@
+.search{
+    display:  flex;
+    justify-items: center;
+    justify-content: center;
+    width: 100%;
+    height: inherit;
+    
+
+}
+.input{
+    width: 50%;
+    height: 50%;
+    border: 2px solid black;
+    padding: 12px;
+}
+
+.input:active{
+    border: 2px solid greenyellow;
+    
+
+}
