@@ -1,15 +1,23 @@
 import React from 'react'
 import Search from '../search/Search'
 import './Pokedex.css'
+import PokemonList from '../pokemonList/PokemonList'
+import { Link } from 'react-router-dom'
+import Navbar from '../nav/Navbar'
 
 const Pokedex = () => {
   return (
     <div>
       
         <div>
-            <h1 className='pok-heading'>Pokedex</h1>
+          
+           
+       
+         
             <br />
             <Search />
+
+            <PokemonList />
             
         </div>
     </div>

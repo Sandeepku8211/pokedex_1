@@ -1,0 +1,9 @@
+.px{
+    flex-basis: 30%;
+    
+    
+}
+.px:active{
+    background-color: goldenrod;
+}
+

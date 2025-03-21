@@ -17,21 +17,25 @@ async function  downLoadData(){
     const pokemondata = response.data.results;
     const pokemonresult = pokemondata.map((pokemon)=>axios.get(pokemon.url))
     const pokemonPromise = await axios.all(pokemonresult)
-    console.log(pokemonPromise)
+    
     const res = pokemonPromise.map((pokemonte)=>{
       const pokemon=pokemonte.data;
       return{
         id:pokemon.id,
         name:pokemon.name,
-        image:pokemon.sprites.front_default
+        image:pokemon.sprites.front_default,
+        types: pokemon.keys
       }
       
     })
   
-    console.log(res)
+   
+  
+    setPokedexurl(pokedexurl)
     setPokemonDb(res)
     setLoading(false)
  }
+
 
     useEffect(()=>{
       
@@ -41,23 +45,20 @@ async function  downLoadData(){
   return (
     <div>
       <div>
-      <h1>pokemonLIst</h1>
+        <br />
+      <h1 className=' heading_c'>PokemonList</h1>
       {
         (isLoading)? "loading ...":
         <div className='poklist'>
           {
-            pokemonDb.map((p)=><Pokemon name={p.name} image={p.image} key={p.id} />)
+            pokemonDb.map((p)=><Pokemon name={p.name} image={p.image} key={p.id} id={p.id} />)
           }
         </div>
         
       }
     </div>
-    <div className='gap-4'>
-      <button disabled={preurl==null} onClick={()=>setpreurl(preurl)}>next</button><br />
-      <button disabled={nexturl==null} onClick={()=>setNexturl(nexturl)}>pre</button>
-    </div>
     <div>
-      {name}
+      <button disabled={nexturl ==null} onClick={()=>setNexturl(nexturl)} >next</button>
     </div>
     </div>
   )
